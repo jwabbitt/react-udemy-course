@@ -1,0 +1,43 @@
+.div {
+  padding: 1.5rem;
+  width: 50rem;
+}
+
+.add-user__controls {
+  text-align: left;
+  font-size: 1.5em;
+}
+
+.add-user__control {
+  margin-bottom: 1rem;
+}
+
+.add-user__control label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.add-user__control input {
+  font: inherit;
+  outline: none;
+  padding: 0.25rem;
+  border: 2px solid #ccc;
+  width: 100%;
+}
+
+.add-user__control input:focus {
+  border: 2px solid #4b0c52;
+}
+
+.add-user__actions {
+  text-align: right;
+}
+
+.add-user__controls button {
+  font: inherit;
+  font-weight: lighter;
+  color: #fff;
+  background-color: #4b0c52;
+  padding: .1em 1em;
+}
