@@ -24,7 +24,8 @@ const AddUser = (props) => {
 
     const userData = {
       username: enteredUsername,
-      age: enteredAge
+      age: enteredAge,
+      id: Math.random().toString()
     }
 
     if(userData.username === '' && userData.age === '') {
@@ -38,7 +39,11 @@ const AddUser = (props) => {
       setErrorMessage('Please enter a valid age (non-empty value).')
     } else if (userData.age < 0) {
       setErrorPresent(true);
-      setErrorMessage('Please enter a valid age greater than 0')
+      setErrorMessage('Please enter a valid age (positive number).')
+    } else {
+      props.addUser(userData);
+      setEnteredUsername('');
+      setEnteredAge('');
     }
 
   };
