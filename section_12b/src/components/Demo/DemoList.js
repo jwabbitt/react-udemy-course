@@ -8,6 +8,7 @@ const DemoList = (props) => {
   const sortedList = useMemo(() => {
     console.log('Items sorted');
     return props.items.sort((a, b) => a - b);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [items]);
   console.log('DemoList RUNNING');
 
