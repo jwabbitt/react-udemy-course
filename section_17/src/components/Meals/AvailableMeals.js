@@ -4,13 +4,15 @@ import Card from '../UI/Card';
 import MealItem from './MealItem/MealItem';
 import classes from './AvailableMeals.module.css';
 
-
 const AvailableMeals = () => {
   const [meals, setMeals] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchMeals = async () => {
-      const response = await fetch('https://react-udemy-181-default-rtdb.firebaseio.com/meals.json').then();
+      const response = await fetch(
+        'https://react-udemy-181-default-rtdb.firebaseio.com/meals.json'
+      ).then();
       const respnoseData = await response.json();
 
       const loadedMeals = [];
@@ -25,10 +27,19 @@ const AvailableMeals = () => {
       }
 
       setMeals(loadedMeals);
+      setIsLoading(false);
     };
 
     fetchMeals();
   }, []);
+
+  if (isLoading) {
+    return (
+      <section className={classes.MealsLoading}>
+        <p>Loading...</p>
+      </section>
+    );
+  }
 
   const mealsList = meals.map((meal) => (
     <MealItem
