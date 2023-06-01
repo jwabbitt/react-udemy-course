@@ -54,11 +54,15 @@
   background-color: #7a2706;
 }
 
-.invalid label {
+.invalid label, p {
   color: #ca3e51;
 }
 
 .invalid input {
   border-color: #aa0b20;
   background-color: #ffeff1;
+}
+
+.invalid p {
+  margin-top: .25em;
 }
